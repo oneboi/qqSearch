@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+.search_text
+{
+	line-height:33px;
+	height:33px;
+	width:280px;
+	padding:0 10px;
+	float:left;
+	border:1px solid #f36728;
+}
+.search_button
+{
+	background-color:#F60;
+	background-color:#f36728;
+	width:85px;
+	height:35px;
+	background-image:url(img/banji/button_search.png);
+	background-repeat:no-repeat;
+	background-position:8px 8px;
+	border:0px;
+	float:left;
+	color:#FFF;
+}
+.search_button:hover
+{
+	opacity:0.8;
+}
+.search_select
+{
+	line-height:33px;
+	height:33px;
+	border:1px solid #f36728;
+	min-width:80px;
+	font-size:12px;
+}
+.check_search_box
+{
+	width:220px;
+	text-align:center;
+}
+.check_search_box li
+{
+	display:inline;
+	margin:0 8px;
+	color:#f36728;
+	cursor:pointer;
+	font-size:12px;
+}
+.top_table
+{
+	padding:30px;
+	background-color:#fbf6f5;
+}
+option
+{
+	background-color:#ffebe1;
+	color:#666;
+}
+.tuijian li
+{
+	margin-left:30px;
+	line-height:30px;
+	color:#707070;
+	
+}
+.jieguo
+{
+	padding-left:30px;
+	background-color:#e6e6e6;
+	font-size:12px;
+	color:#a2a2a2;
+	display:none;
+}
+.jieguo li
+{
+	
+	line-height:30px;
+	color:#707070;
+	display:inline;
+	font-size:12px;
+	
+}
+.back_button:hover
+{
+	opacity:0.8;
+	cursor:pointer;
+}
+.back_tuijian_button
+{
+	display:inline-block;
+	height:20px;
+	width:20px;
+	background-image:url(img/chazhao/back_button.png);
+	position:relative;
+	top:4px;
+	margin-right:3px;
+}
+.sousuo
+{
+	margin-left:25px;
+}
+.jieguo .li_margin
+{
+	color:#a2a2a2;
+}
+</style>
+</head>
+
+<body>
+<div class="top_table">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td><input class="search_text xingming" type="text" placeholder="搜索好友姓名"  />
+		<input type="button" class="search_button" value="　搜索" />
+		</td>
+		<td>
+		<select class="search_select xingbie" name="">
+		<option>性别</option>
+		<option>不限</option>
+		<option>男</option>
+		<option>女</option>
+		</select>
+		</td>
+		<td>
+		<select class="search_select juese" name="">
+		<option>角色</option>
+		<option>老师</option>
+		<option>学生</option>
+		<option>家长</option>
+		</select>
+		</td>
+		<td>
+		<ul class="check_search_box">
+	
+		</ul>
+		</td>
+	</tr>
+</table>
+</div>
+<div class="nav_cention">
+<ul class="tuijian">
+<li>好友推荐</li>
+</ul>
+<ul class="jieguo">
+<li class="back_button"><i class="back_tuijian_button"></i>返回</li>
+<li class="li_margin sousuo">搜索：</li>　|　
+<li class="li_margin user_name">姓名</li>　|　
+<li class="li_margin sex_this">男</li>　|　
+<li class="li_margin classdo_this">五年级二班</li>
+</ul>
+</div>
+<div id="cention_zhaoren">
+
+</div>
+</body>
+<script>
+$(document).ready(function(e) {
+	$(".search_button").click(function(){
+		var uName=$(".xingming").val();
+		var uSex=$(".xingbie").val();
+		var uClass=$(".juese").val();
+		$(".user_name").html(uName);
+		$(".sex_this").html(uSex);
+		$(".classdo_this").html(uClass);
+		$(".tuijian").fadeOut(0);
+		$(".jieguo").fadeIn(0);
+		})
+		
+	$(".back_button").click(function(){
+		$(".tuijian").fadeIn(0);
+		$(".jieguo").fadeOut(0);
+	})
+});
+var fromHtml3="iframe/查找子页/找人结果页.html";
+$(document).ready(function(e) {
+	inhtml3(fromHtml3);
+	$(".app_top_nav li").click(function(){
+		$(this).parent().find("li").removeClass("li_check");
+		$(this).addClass("li_check");
+		})
+	$(".search_button").click(function(){
+		fromHtml3="iframe/查找子页/找人结果页.html"
+		inhtml3(fromHtml3);
+		})
+	$(".back_button").click(function(){
+		fromHtml3="iframe/查找子页/找人结果页.html"
+		inhtml3(fromHtml3);
+		})
+});
+function inhtml3(fromHtml3)
+{       $(".loading").fadeIn(100);
+		$.get(fromHtml3, function (data) {
+        $("#cention_zhaoren").html(data);
+		$(".loading").fadeOut(100);
+        });
+}
+</script>
+</html>

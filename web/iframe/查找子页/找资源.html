@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+.search_text
+{
+	line-height:33px;
+	height:33px;
+	width:280px;
+	padding:0 10px;
+	float:left;
+	border:1px solid #f36728;
+}
+.search_button
+{
+	background-color:#F60;
+	background-color:#f36728;
+	width:85px;
+	height:35px;
+	background-image:url(img/banji/button_search.png);
+	background-repeat:no-repeat;
+	background-position:8px 8px;
+	border:0px;
+	float:left;
+	color:#FFF;
+}
+.search_button:hover
+{
+	opacity:0.8;
+}
+.search_select
+{
+	line-height:33px;
+	height:33px;
+	border:1px solid #f36728;
+	min-width:80px;
+	font-size:12px;
+}
+.check_search_box
+{
+	width:30px;
+	text-align:center;
+}
+.check_search_box li
+{
+	display:inline;
+	margin:0 8px;
+	color:#f36728;
+	cursor:pointer;
+	font-size:12px;
+}
+.top_table
+{
+	padding:30px;
+	background-color:#fbf6f5;
+}
+option
+{
+	background-color:#ffebe1;
+	color:#666;
+}
+.tuijian li
+{
+	margin-left:30px;
+	line-height:30px;
+	color:#707070;
+	
+}
+.jieguo
+{
+	padding-left:30px;
+	background-color:#e6e6e6;
+	font-size:12px;
+	color:#a2a2a2;
+	display:none;
+}
+.jieguo li
+{
+	
+	line-height:30px;
+	color:#707070;
+	display:inline;
+	font-size:12px;
+	
+}
+.back_button:hover
+{
+	opacity:0.8;
+	cursor:pointer;
+}
+.back_tuijian_button
+{
+	display:inline-block;
+	height:20px;
+	width:20px;
+	background-image:url(img/chazhao/back_button.png);
+	position:relative;
+	top:4px;
+	margin-right:3px;
+}
+.sousuo
+{
+	margin-left:25px;
+}
+.jieguo .li_margin
+{
+	color:#a2a2a2;
+}
+.check_search_banji
+{
+	background-color:#F30;
+	font-size:20px;
+}
+.chk_1 { 
+    display: none; 
+} 
+ 
+.chk_1 + label { 
+    background-color: #FFF; 
+    border: 1px solid #f36728;
+	display:inline-block;
+	width:17px;
+	height:17px;
+    border-radius: 30px; 
+    display: inline-block; 
+    position: relative; 
+    margin-right:-20px;
+	margin-left:20px;
+	float:left; 
+} 
+.chk_1 + label:active { 
+    
+} 
+ 
+.chk_1:checked + label {
+	background-image:url(img/chazhao/check_bg.png);
+} 
+ 
+.chk_1:checked + label:after { 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    width: 100%; 
+    text-align: center; 
+    font-size: 15px; 
+    padding: 1px 0 0 0; 
+    vertical-align: text-top; 
+}
+.dls
+{
+	position:relative;
+	left:5px;
+	top:-2px;
+	display:inline-block;
+	width:80px;
+}
+.check_paiming li
+{
+	display:inline;
+	margin-right:10px;
+	font-size:12px;
+	cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+<div class="top_table">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	<td width="10%">
+	<ul class="check_search_box">
+	    <input name="Fruit" type="radio" id="checkbox_a1" class="chk_1"  checked="checked"/> 
+<label for="checkbox_a1"> <span class="dls">按资源</span></label>
+		</ul>
+	</td>
+	<td width="14%">
+	<ul class="check_search_box">
+	    <input name="Fruit" type="radio" id="checkbox_a2" class="chk_1" /> 
+<label for="checkbox_a2"> <span class="dls" style="width:90px;">按知识点</span></label>
+		</ul>
+	</td>
+		<td width="51%"><input class="search_text quanzi_name" type="text" placeholder="搜索资源"  />
+		<input type="button" class="search_button" value="　搜索" />
+		</td>
+		<td width="25%">
+		<ul class="check_paiming">
+		<li>最多下载</li>
+		<li>最新上传</li>
+		<li>最受好评</li>
+		</ul>
+		</td>
+	</tr>
+</table>
+</div>
+<div class="nav_cention">
+<ul class="tuijian">
+<li>圈子推荐</li>
+</ul>
+<ul class="jieguo">
+<li class="back_button"><i class="back_tuijian_button"></i>返回</li>
+<li class="li_margin sousuo">搜索：</li>　|　
+<li class="li_margin quanzi_name_all">姓名</li>
+</ul>
+</div>
+<div id="cention_zhaoren">
+
+</div>
+</body>
+<script>
+$(document).ready(function(e) {
+	$(".search_button").click(function(){
+		var uName=$(".quanzi_name").val();
+		$(".quanzi_name_all").html(uName);
+		$(".tuijian").fadeOut(0);
+		$(".jieguo").fadeIn(0);
+		})
+		
+	$(".back_button").click(function(){
+		$(".tuijian").fadeIn(0);
+		$(".jieguo").fadeOut(0);
+	})
+});
+var fromHtml3="iframe/查找子页/找资源结果页.html";
+$(document).ready(function(e) {
+	inhtml3(fromHtml3);
+	$(".app_top_nav li").click(function(){
+		$(this).parent().find("li").removeClass("li_check");
+		$(this).addClass("li_check");
+		})
+	$(".search_button").click(function(){
+		fromHtml3="iframe/查找子页/找资源结果页.html"
+		inhtml3(fromHtml3);
+		})
+	$(".back_button").click(function(){
+		fromHtml3="iframe/查找子页/找资源结果页.html"
+		inhtml3(fromHtml3);
+		})
+});
+function inhtml3(fromHtml3)
+{       $(".loading").fadeIn(100);
+		$.get(fromHtml3, function (data) {
+        $("#cention_zhaoren").html(data);
+		$(".loading").fadeOut(100);
+        });
+}
+</script>
+</html>

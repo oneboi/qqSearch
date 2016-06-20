@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../css/public_if.css"/>
+<script>
+window.parent.setWindowTitle("查找","url(img/chazhao/search_ico.png)");
+</script>
+<style>
+.app_header .app_top_nav li
+{
+	display:inline-block;
+	width:130px;
+	height:30px;
+	line-height:16px;
+	text-align:center;
+	font-size:16px;
+	cursor:pointer;
+}
+.app_top_nav
+{
+	color:#FFF;
+	width:100%;;
+	margin:0 auto;
+	background-color:#f36729;
+	text-align:center;
+	
+}
+.li_gang
+{
+	font-size:12px;
+	position:relative;
+	top:-2px;
+}
+.li_check
+{
+	background-image:url(img/chazhao/li_check.png);
+	background-repeat:no-repeat;
+	background-position:55px 23px;
+	font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+<div class="app_header" id="header">
+<ul class="app_top_nav">
+<li class="li_check zhaoren">找人</li>
+<span class="li_gang">|</span>
+<li class="zhaoquanzi">找圈子</li>
+<span class="li_gang">|</span>
+<li class="zhaoziyuan">找资源</li>
+</ul>
+</div>
+<div class="chazhao_box" id="chazhao_box">
+</div>
+</body>
+<script>
+var fromHtml2="iframe/查找子页/找人.html";
+$(document).ready(function(e) {
+	inhtml2(fromHtml2);
+	$(".app_top_nav li").click(function(){
+		$(this).parent().find("li").removeClass("li_check");
+		$(this).addClass("li_check");
+		})
+	$(".zhaoren").click(function(){
+		fromHtml2="iframe/查找子页/找人.html"
+		inhtml2(fromHtml2);
+		})
+	$(".zhaoquanzi").click(function(){
+		fromHtml2="iframe/查找子页/找圈子.html"
+		inhtml2(fromHtml2);
+		})
+	$(".zhaoziyuan").click(function(){
+		fromHtml2="iframe/查找子页/找资源.html"
+		inhtml2(fromHtml2);
+		})
+});
+function inhtml2(fromHtml2)
+{       $(".loading").fadeIn(100);
+		$.get(fromHtml2, function (data) {
+        $("#chazhao_box").html(data);
+		$(".loading").fadeOut(100);
+        });
+}
+</script>
+</html>

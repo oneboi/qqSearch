@@ -1,0 +1,1025 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../../js/jquery-1.8.0.min.js"></script>
+<script>
+window.parent.setWindowTitle("人人通云盘","url(img/yun/yun_ico.png)");
+</script>
+<title>无标题文档</title>
+<style type="text/css">
+.bottom_box {
+	height: 396px;
+	overflow: auto;
+}
+.bottom_box table td {
+	text-align: center;
+	color: #6c6c6c;
+	line-height: 30px;
+	font-size: 12px;
+	cursor:pointer;
+}
+.table_title table th {
+	color: #e06832;
+	font-weight: 100;
+	font-size: 12px;
+	line-height: 40px;
+}
+.bottom_box table th {
+	color: #e06832;
+	font-weight: 100;
+	font-size: 16px;
+	line-height: 40px;
+}
+.bottom_box table .f_td {
+	padding-left: 40px;
+}
+.bottom_box table .f_td_2 {
+	padding-left: 30px;
+	text-align: left;
+	color: #e28b25;
+	font-size: 14px;
+}
+.bottom_box table .l_td {
+	padding-right: 20px;
+}
+.th_tr {
+	border-bottom: 1px solid #edd9d0;
+}
+.tr_hover {
+	border-left: 3px solid #Fff;
+}
+.tr_hover:hover {
+	background-color: #FFE8E8;
+}
+.check_tr_hover {
+	
+	background-color:#FFE8E8;
+	border-left: 3px solid #F30;
+}
+a {
+	cursor: pointer;
+	display: block;
+}
+/*下载样式*/
+.circle {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	border-radius: 50%;
+	background: #F60;
+	margin-left: 5px;
+}
+.pie_left, .pie_right {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.left, .right {
+	display: block;
+	width: 30px;
+	height: 30px;
+	background: #CCC;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: rotate(0deg);
+}
+.pie_right, .right {
+	clip: rect(0,auto,auto,15px);
+}
+.pie_left, .left {
+	clip: rect(0,15px,auto,0);
+}
+.mask {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	left: 5px;
+	top: 5px;
+	background: #FFF;
+	position: absolute;
+	text-align: center;
+	line-height: 20px;
+	font-size: 10px;
+}
+/*底部*/
+.footer {
+	height: 60px;
+	background-color: #fff;
+	position: fixed;
+	border-bottom: 0px;
+	width: 900px;
+	box-shadow: 0 0 5px #666666;
+	font-size: 12px;
+	line-height: 20px;
+}
+.xuanzhuan {
+	height: 60px;
+	width: 60px;
+	background-image: url(img/xiazai/xuanzhuan.png);
+	background-repeat: no-repeat;
+}
+.zhuandong {
+	-webkit-animation: dh_nav4 0.5s infinite linear;
+}
+ @-webkit-keyframes dh_nav4 {
+0% {
+-webkit-transform:rotateX(0deg)rotateY(0deg)rotateZ(0deg);
+}
+50% {
+-webkit-transform:rotateX(0deg)rotateY(0deg)rotateZ(180deg);
+}
+100% {
+-webkit-transform:rotateX(0deg)rotateY(0deg)rotateZ(360deg);
+}
+}
+.xiazai {
+	height: 60px;
+	width: 60px;
+	position: absolute;
+	margin-top: -60px;
+	background-image: url(img/xiazai/xiazai.png);
+}
+.f_l {
+	float: left;
+	width: 790px;
+	padding: 10px;
+}
+.f_r {
+	float: left;
+	width: 60px;
+	margin-left: 10px;
+}
+.year {
+	color: #F30;
+	font-size: 14px;
+}
+/*云盘头部*/
+.box_header {
+	height: 30px;
+	padding: 10px;
+	background-color: #FDD;/*background-image:url(img/yun/3.png)*/
+}
+.box_header ul button {
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	color: #444;
+	line-height: 30px;
+	opacity: 0.8;
+	font-size:12px;
+}
+.box_header ul button[disabled="disabled"]
+{
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	color: #444;
+	line-height: 30px;
+	opacity: 0.5;
+	font-size:12px;
+}
+.box_header ul button[disabled="disabled"]:hover
+{
+	opacity: 0.5;
+}
+.box_header ul button:hover {
+	opacity: 1;
+}
+.bottom_box table .f_td_3 {
+	text-align: left;
+}
+.word_li {
+	background-repeat: no-repeat;
+	background-position: 5px 16px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 475px;
+	text-indent:30px;
+	font-size:12px;
+}
+.chk_1 {
+	display: none;
+}
+.chk_1 + label {
+	background-color: #FFF;
+	border: 1px solid #f36728;
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	border-radius: 30px;
+	display: inline-block;
+	position: relative;
+	margin-right: 10px;
+	margin-left: -10px;
+	float: left;
+}
+.chk_1 + label:active {
+}
+.chk_1:checked + label {
+	background-image: url(img/chazhao/check_bg.png);
+}
+.chk_1:checked + label:after {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	font-size: 15px;
+	padding: 1px 0 0 0;
+	vertical-align: text-top;
+}
+.alert_box {
+	width: 900px;
+	position: fixed;
+	bottom: 70px;
+	z-index: 99;
+}
+.file_where {
+	background-color: rgba(0,0,0,0.5);
+	height: 40px;
+	display: none;
+}
+.file_where img {
+	float: left;
+	margin-top: 5px;
+}
+.file_where .file_text {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	border: 0px;
+	margin-top: 5px;
+	margin-left: 10px;
+	width: 200px;
+	padding: 0 10px;
+}
+.save_button {
+	width: 80px;
+	height: 30px;
+	border: 0px;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+.back_button {
+	width: 80px;
+	height: 30px;
+	border: 0px;
+	margin-top: 5px;
+}
+button:hover {
+	opacity: 0.8;
+}
+.close_alert {
+	height: 30px;
+	width: 30px;
+	background-image: url(img/yun/panel_tools.png);
+	background-repeat: no-repeat;
+	background-position: 8px 9px;
+	display: inline-block;
+	float: right;
+	background-color: #999;
+	margin-top: 5px;
+	margin-right: 10px;
+}
+.close_alert:hover {
+	opacity: 0.8;
+}
+.delete_yes {
+	color: #FFF;
+	margin-left: 10px;
+}
+.f_right
+{
+
+	float:right;
+}
+.f_left
+{
+
+	float:left;
+}
+.nav_check_box
+{
+	width:70%;
+}
+.expansion_box
+{
+	width:30%;
+}
+.progress_bar_box
+{
+	height:20px;
+	width:200px;
+	border:1px solid #F60;
+	margin-top:-20px;
+	overflow:hidden
+}
+.progress_bar
+{
+	height:20px;
+	background-color:#F60;
+	-webkit-animation: dh_nav5 1s;
+	width:0px;
+}
+ @-webkit-keyframes dh_nav5 {
+0% {
+	margin-left:-200px;
+}
+100% {
+margin-left:0px;
+}
+}
+.expansion_box h1
+{
+	text-align:right;
+	font-size:12px;
+	color:#444;
+	margin-top:5px;
+	margin-right:5px;
+}
+.expansion_button
+{
+	border:0px;
+	background-color:#F63;
+	color:#FFF;
+	width:60px;
+	height:22px;
+	margin-top:3px;
+}
+.top_right_box
+{
+	width:200px;
+	height:150px;
+	position:absolute;
+	top:75px;
+	right:15px;
+	background-color:#fff;
+	box-shadow:0 0 10px #CCCCCC;
+	font-size:12px;
+	padding:10px;
+	line-height:30px;
+	display:none;
+}
+.duihuan_button
+{
+	width:200px;
+	height:30px;
+	color:#FFF;
+	border:0px;
+	background-color:#F60;
+	margin-top:10px;
+}
+.duihuan_success
+{
+	color:#090;
+	display:none;
+}
+.up_file_button
+{
+	background-image:url(img/yun/up_button.png);
+	background-repeat:no-repeat;
+	background-position:10px 5px;
+	text-indent:15px;
+}
+.new_filebook_button
+{
+	background-image:url(img/yun/new_button.png);
+	background-repeat:no-repeat;
+	background-position:10px 5px;
+	text-indent:15px
+}
+.delete_file_button
+{
+	background-image:url(img/yun/delete_button.png);
+	background-repeat:no-repeat;
+	background-position:10px 5px;
+	text-indent:15px
+}
+.new_name_button
+{
+	background-image:url(img/yun/name_button.png);
+	background-repeat:no-repeat;
+	background-position:10px 5px;
+	text-indent:20px
+}
+.down_button
+{
+	background-image:url(img/yun/down_button.png);
+	background-repeat:no-repeat;
+	background-position:10px 5px;
+	text-indent:15px
+}
+.nav_top_box
+{
+	height:20px;
+	line-height:20px;
+	padding-left:10px;
+	background-color:#E3C8C8;
+	color:#999;
+}
+.nav_top_box ul li
+{
+	display:inline;
+	font-size:12px;
+	margin:0 2px;
+	margin-right:5px;
+	color:#fff;
+	text-shadow:0 0 5px #ccc;
+	cursor:pointer;
+}
+.nav_top_box ul .check_this_li
+{
+	color:#F60;
+}
+
+
+/*下载列表*/
+.down_list_button
+{
+	display:inline-block;
+	width:80px;
+	height:25px;
+	line-height:25px;
+	border:1px solid #666;
+	float:right;
+	text-indent:25px;
+	border-radius:3px;
+	background-image:url(img/yun/list_ico.png);
+	background-repeat:no-repeat;
+	background-position:2px 3px;
+	opacity:0.7;
+	margin-top:-10px;
+	cursor:pointer;
+}
+.down_list_button:hover
+{
+	opacity:1;
+}
+.win_download
+{
+	width:580px;
+	height:380px;
+	position:absolute;
+	top:100px;
+	left:150px;
+	background-color:#FFF;
+	box-shadow:0px 0px 5px #999;
+	color:#444;
+	padding:10px;
+	line-height:30px;
+}
+.word_li_2 {
+	background-repeat: no-repeat;
+	background-position: 5px 16px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 435px;
+	text-indent:30px;
+	font-size:12px;
+}
+.close_win_btn
+{
+	display:block;
+	float:right;
+	height:24px;
+	width:24px;
+	background-color:#999;
+	border-radius:30px;
+	margin-top:-25px;
+	margin-right:-25px;
+	border:3px solid #FFF;
+	box-shadow:0px 0px 5px #999;
+	background-image:url(img/yun/panel_tools.png);
+	background-repeat:no-repeat;
+	background-position:5px 6px;
+	cursor:pointer;
+}
+.close_win_btn:hover
+{
+	opacity:0.8;
+}
+.download-title
+{
+	position:absolute;
+	margin-top:-8px;
+	color:#666;
+}
+.list_box
+{
+	height: 330px;
+	overflow: auto;
+}
+</style>
+</head>
+
+<body>
+<div class="box_header">
+	<ul class="f_left nav_check_box">
+		<button class="up_file_button">上传</button>
+		<button class="new_filebook_button">新建</button>
+		<button class="delete_file_button"  disabled="disabled">删除</button>
+		<button class="new_name_button"  disabled="disabled">重命名</button>
+		<button class="down_button" disabled="disabled">下载</button>
+	</ul>
+	<div class="f_right expansion_box">
+		<div class="f_left">
+			<h1><span class="this_rl">301</span>M/<span class="all_rl">352</span>M</h1>
+			<div class="progress_bar_box">
+				<div class="progress_bar"></div>
+			</div>
+		</div>
+		<div class="f_right">
+			<button class="expansion_button">扩容</button>
+		</div>
+	</div>
+</div>
+<div class="nav_top_box">
+<ul>
+<li>云盘首页</li>&gt;
+<li>学术</li>&gt;
+<li class="check_this_li">学术1</li>
+</ul>
+</div>
+<div class="table_title">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr class="th_tr">
+			<th width="53%">文件名</th>
+			<th width="13%">类型</th>
+			<th width="11%">大小</th>
+			<th width="9%">上传时间</th>
+		</tr>
+	</table>
+</div>
+<div class="bottom_box">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+		<tr class="tr_hover">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li">张珈珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">文本</td>
+			<td width="11%">5</td>
+			<td width="9%">2013-12-08</td>
+		</tr>
+
+	</table>
+</div>
+<div class="alert_box">
+	<div class="file_where up_file">
+		<input placeholder="选择文件" class="file_text" type="text" />
+		<img src="img/yun/button_wenjian.png" />
+		<button class="save_button">保存</button>
+		<button class="back_button">取消</button>
+		<i class="close_alert"></i> </div>
+	<div class="file_where new_filebook">
+		<input placeholder="文件夹名" class="file_text" type="text" />
+		<button class="save_button">保存</button>
+		<button class="back_button">取消</button>
+		<i class="close_alert"></i> </div>
+	<div class="file_where delete_this"> <span class="delete_yes">确定要删除吗？</span>
+		<button class="save_button">确定</button>
+		<button class="back_button">取消</button>
+		<i class="close_alert"></i> </div>
+	<div class="file_where new_name">
+		<input placeholder="输入新的文件名" class="file_text" type="text" />
+		<button class="save_button">保存</button>
+		<button class="back_button">取消</button>
+		<i class="close_alert"></i> </div>
+</div>
+<div class="top_right_box">
+<h1>当前积分：783</h1>
+<h1>剩余容量：29.3M</h1>
+<h1><select>
+<option>请选择</option>
+<option>10积分兑换1M</option>
+<option>100积分兑换10M</option>
+<option>1000积分兑换100M</option>
+</select></h1>
+<button class="duihuan_button">兑换</button>
+<span class="duihuan_success">恭喜，兑换成功，即将更新页面！</span>
+</div>
+
+<div class="footer">
+	<div class="f_r">
+		<div class="xuanzhuan"> </div>
+		<div class="xiazai"> </div>
+	</div>
+	<div class="f_l"> <span>当前队列有
+		<label class="year xzCount">0</label>
+		个文件正在下载，下载速度：
+		<label class="year xzSudu">0</label>
+		K/s </span><br />
+		<span>下载状态：
+		<label class="year xzZhuangtai">无任务</label>
+		</span>
+		<span class="down_list_button">
+		下载列表
+		</span>
+	</div>
+	
+</div>
+<div class="win_download">
+<h1 class="download-title">下载列表</h1>
+<span class="close_win_btn"></span>
+<div class="table_title">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr class="th_tr">
+			<th width="60%">文件名</th>
+			<th width="11%">大小</th>
+			<th width="12%">下载进度</th>
+		</tr>
+	</table>
+</div>
+<div class="list_box">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+		<tr class="">
+			<td width="53%" class="f_td_3">
+				<dd class="word_li_2">张珈玮张珈玮张珈玮张珈玮张珈玮.doc</dd>
+			</td>
+			<td width="13%">5M</td>
+			<td width="9%">5%</td>
+		</tr>
+	</table>
+</div>
+</div>
+</body>
+<script>
+$(document).ready(function(e) {
+	
+	/*按钮事件*/
+$(".expansion_button").click(function(){
+	
+	})
+$(".up_file_button").click(function(){
+	$(".file_where").fadeOut(0)
+	$(".up_file").fadeIn(0);
+	})
+$(".new_filebook_button").click(function(){
+	$(".file_where").fadeOut(0)
+	$(".new_filebook").fadeIn(0);
+	})
+$(".delete_file_button").click(function(){
+	$(".file_where").fadeOut(0)
+	$(".delete_this").fadeIn(0);
+	})
+$(".new_name_button").click(function(){
+	$(".file_where").fadeOut(0)
+	$(".new_name").fadeIn(0);
+	})
+$(".close_alert").click(function(){
+	$(this).parent().fadeOut(0);	
+})
+$(".duihuan_button").click(function(){
+	$(".duihuan_success").fadeIn(0);
+	setTimeout(function(){
+		//调用父级函数，再兑换积分完成后，自动执行刷新函数，单页面测试时请重新编写效果函数
+		inhtml(fromHtml);
+		},1000)	
+})
+
+})
+
+//判断失焦div点击事件
+function stopPropagation(e) { 
+if (e.stopPropagation) 
+e.stopPropagation(); 
+else 
+e.cancelBubble = true; 
+} 
+
+$(document).bind('click',function(){ 
+
+//注册积分兑换隐藏窗口失焦处理
+$('.top_right_box').css('display','none'); 
+
+//注册选中效果失焦处理
+$(".tr_hover").removeClass("check_tr_hover");
+$(".delete_file_button").attr("disabled", true);
+$(".new_name_button").attr("disabled", true);
+$(".down_button").attr("disabled", true);
+}); 
+
+
+$(".tr_hover").bind('click',function(){
+	$(this).parent().find(".tr_hover").removeClass("check_tr_hover");
+	$(this).addClass("check_tr_hover");
+	 $(".delete_file_button").attr("disabled", false);
+	  $(".new_name_button").attr("disabled", false);
+	   $(".down_button").attr("disabled", false);
+	})
+	
+
+$('.alert_box').bind('click',function(e){ 
+stopPropagation(e); 
+}); 
+$(".nav_check_box button").bind('click',function(e){ 
+stopPropagation(e); 
+}); 
+$('.tr_hover').bind('click',function(e){ 
+stopPropagation(e); 
+}); 
+$('.top_right_box').bind('click',function(e){ 
+stopPropagation(e); 
+}); 
+$('.expansion_button').bind('click',function(e){ 
+stopPropagation(e); 
+$('.top_right_box').css('display','block');
+}); 
+
+</script>
+
+
+<script>
+var xzCount=0;//正在下载文件个数
+var xzSudu=0;//下载速度
+var xzZhuangtai="无任务";//下载状态
+
+$(document).ready(function(e) {
+	doProgressbar();//读取容量，显示容量条
+     xzZhuangtai="无任务";//默认无任务状态
+	du();
+	
+	$(".down_button").click( function(){
+		var xz_id = $(this).parent().attr("id");
+		thisdd(xz_id,0);
+		$(".xuanzhuan").addClass("zhuandong");
+		xzCount++;
+		xzZhuangtai="正在下载";
+		doDown();
+		})	
+});
+
+//自动读取实时进度环
+function du() {
+    $('.circle').each(function(index, el) {
+        var num = $(this).find('span').text() * 3.6;
+        if (num<=180) {
+            $(this).find('.right').css('transform', "rotate(" + num + "deg)");
+        } else {
+            $(this).find('.right').css('transform', "rotate(180deg)");
+            $(this).find('.left').css('transform', "rotate(" + (num - 180) + "deg)");
+        };
+    });
+
+}
+
+//更新下载状态
+function doDown()
+{
+	$(".xzCount").html(xzCount);
+	$(".xzSudu").html(xzSudu);
+	$(".xzZhuangtai").html(xzZhuangtai);
+}
+
+/*顶部进度条自动判断*/
+function doProgressbar(){
+	var thisRl=parseInt($(".this_rl").html());
+	var allRl=parseInt($(".all_rl").html());
+	var thisBf=thisRl/allRl;
+	var thisBfshow=parseInt(thisBf*100);
+	$(".progress_bar").css("width",""+thisBfshow+"%");
+	}
+	
+/*下载方法独立线程方法*/
+function thisdd(xz_id,feleHow)
+{
+	var thisHtml="<div class='circle'><div class='pie_left'><div class='left'></div></div><div class='pie_right'><div class='right'></div></div><div class='mask'><span>"+feleHow+"</span>%</div></div>";
+	$("#"+xz_id+"").html(thisHtml);
+  var setTimethis=setInterval(function(){
+	feleHow=feleHow+30;
+	xzSudu=xzSudu+10;
+	if(feleHow>99)
+	{
+		$("#"+xz_id+"").html("<a class='dakai_button'>打开</a>");
+		xzCount--;
+		if(xzCount<1)
+		{
+			xzCount=0;
+			xzZhuangtai="无任务";
+			$(".xuanzhuan").removeClass("zhuandong");
+			clearInterval(setTimethis);
+		}
+		doDown();
+		return;
+	}
+	doDown();
+	$("#"+xz_id+"").find("span").html(feleHow);
+	du()
+	},1000)
+}
+</script>
+</html>

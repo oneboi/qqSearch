@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+</script>
+<style>
+.user_from_chazhao
+{
+	width:80px;
+	height:80px;
+	border:1px solid #FFF;
+	border-radius:3px;
+	box-shadow:0 0 3px #CCCCCC;
+}
+.user_name
+{
+	font-size:26px;
+	margin-right:10px;
+	position:relative;
+	top:-13px;
+}
+.user_id
+{
+	position:relative;
+	top:-13px;
+}
+.shuoming
+{
+	width:250px;
+	font-size:12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.top_title
+{
+	padding:10px;
+	width:430px;
+	color:#FFF;
+	margin-top:-100px;
+	position:absolute;
+	font-weight:100;
+	z-index:10;
+	text-shadow:0 0 3px #000000;
+	background-image:url(../img/chazhao/bg_title_lest.png);
+	
+	
+}
+.add_haoyou
+{
+	font-size:12px;
+	width:65px;
+	border:0px;
+	border-radius:3px;
+	height:20px;
+}
+.top_title table tr td
+{
+	
+}
+.ziliao
+{
+	font-size:12px;
+	color:#444;
+	padding:20px 30px;
+}
+
+.ziliao table tr td
+{
+	line-height:30px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="top_title">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="22%" rowspan="2">
+		<img class="user_from_chazhao" src="../img/chazhao/user_img.png" />
+		</td>
+		<td width="60%">
+		<span class="user_name">会上树的猪</span>
+		<span class="user_id">3265265</span>
+		</td>
+		<td width="18%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>
+		<dd class="shuoming">摊开左手 脉络依稀 只是看不清过去   摊开右手 依稀脉络  更是看不清未来</dd>
+		</td>
+		<td id="0"><button class="add_haoyou">加为好友</button></td>
+	</tr>
+</table>
+
+</div>
+<div class="ziliao">
+<table border="0" cellpadding="0" cellspacing="1">
+						<tbody><tr>
+							<td style="width:70px;">
+								姓　名：
+							</td>
+							<td>
+								系统管理员
+							</td>
+						</tr>
+						<tr>
+							<td>
+								账　号：
+							</td>
+							<td>
+								admin
+							</td>
+						</tr>
+						<tr>
+							<td>
+								性　别：
+							</td>
+							<td>
+								未知
+							</td>
+						</tr>
+						<tr>
+							<td>
+								角　色：
+							</td>
+							<td>
+								管理员
+							</td>
+						</tr>
+						<tr>
+							<td>
+								学　校：
+							</td>
+							<td>
+								
+							</td>
+						</tr>
+						<tr>
+							<td>
+								班　级:
+							</td>
+							<td>
+								
+							</td>
+						</tr>
+						<tr>
+							<td>
+								邮　箱：
+							</td>
+							<td>
+								
+							</td>
+						</tr>
+						<tr>
+							<td>
+								电　话：
+							</td>
+							<td>
+								
+							</td>
+						</tr>
+					</tbody></table>
+</div>
+</body>
+<script>
+var win_src=new Array();//创建打开添加好友的窗口数组对象
+$(document).ready(function(e) {
+	
+
+$(".add_haoyou").click(function(){
+		        var this_id = $(this).parent().attr("id");
+				if($(this).hasClass("shf_check")==true)
+				{
+					win_src[this_id].focus();
+				}
+				if($(this).hasClass("shf_check")==false)
+				{
+				        win_src[this_id]= gui.Window.open('添加好友.html?res_id=11', {
+						transparent:true,
+						frame: false,
+						toolbar: false,
+						width: 460,
+						height: 360,
+						resizable:false,
+						fullscreen:false
+				});
+				
+				//子窗口回调响应
+				$(this).addClass("shf_check");
+				 win_src[this_id].on('close', function () {
+					$("#"+this_id+"").find(".add_haoyou").removeClass("shf_check");
+					 this.close(true);
+				 });
+				 }
+
+	  })
+	  
+});
+</script>
+</html>

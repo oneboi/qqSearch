@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+.search_user_box
+{
+	width:240px;
+	height:115px;
+	margin:10px 30px;
+	margin-right:10px;
+	float:left;
+	padding:5px;
+	border-radius:5px;
+	padding-top:10px;
+}
+.search_user_box:hover
+{
+	background-color:#EBEBEB;
+}
+.search_user_box button
+{
+	background-color:#fc9c71;
+	color:#fff;
+	font-size:12px;
+	border:0px;
+	width:45px;
+	margin-right:5px;
+	border-radius:3px
+	
+}
+.search_user_box button:hover
+{
+	opacity:0.8;
+}
+.banji
+{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width:111px;
+	font-size:12px;
+	color:#7c7c7c;
+	font-weight:normal;
+}
+.search_user_box table tr td
+{
+	padding: 0px 5px;
+}
+.user_img_zhaoren
+{
+	border-radius:3px;
+	border:1px solid #FFF;
+}
+.user_img_zhaoren:hover
+{
+	border:1px solid #F30;
+	box-shadow:0px 0px 3px #F30; 
+}
+.set_search_all
+{
+	height:410px;
+	overflow:scroll;
+}
+.search_user_box table tr .quanzi_about
+{
+	padding:8px;
+	font-size:12px;
+	color:#444;
+}
+.qun_ico
+{
+	background-image:url(img/chazhao/qun_ico.png);
+	display:inline-block;
+	height:14px;
+	width:18px;
+	margin-right:5px;
+	position:relative;
+	top:2px;
+}
+.qun_name
+{
+	width:155px;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden;
+}
+</style>
+</head>
+<body>
+<div class="set_search_all">
+
+<dd class="search_user_box">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td rowspan="3"><img class="user_img_zhaoren" title="查看用户资料"   src="img/chazhao/user_img.png" /></td>
+		<td><dd class="qun_name">李潇李潇李潇李潇李潇李潇李潇李潇潇</dd></td>
+	</tr>
+	<tr>
+		<td><dd class="banji"><i class="qun_ico"></i>72/400</dd></td>
+	</tr>
+	<tr>
+		<td id="0">
+		<button class="add_haoyou">+加入</button>
+		<button class="look_haoyou">查看</button>
+		</td>
+	</tr>
+	<tr>
+	<td colspan="2" class="quanzi_about">圈子介绍：登山泛水狄梵思黛辅导费士大夫对方身份士大夫送达方式到付</td>
+	</tr>
+</table>
+</dd>
+
+
+<dd class="search_user_box">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td rowspan="3"><img class="user_img_zhaoren" title="查看用户资料"   src="img/chazhao/user_img.png" /></td>
+		<td><dd class="qun_name">李潇李潇李潇李潇李潇李潇李潇李潇潇</dd></td>
+	</tr>
+	<tr>
+		<td><dd class="banji"><i class="qun_ico"></i>72/400</dd></td>
+	</tr>
+	<tr>
+		<td id="1">
+		<button class="add_haoyou">+加入</button>
+		<button class="look_haoyou">查看</button>
+		</td>
+	</tr>
+	<tr>
+	<td colspan="2" class="quanzi_about">圈子介绍：登山泛水狄梵思黛辅导费士大夫对方身份士大夫送达方式到付</td>
+	</tr>
+</table>
+</dd>
+
+
+<dd class="search_user_box">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td rowspan="3"><img class="user_img_zhaoren" title="查看用户资料"   src="img/chazhao/user_img.png" /></td>
+		<td><dd class="qun_name">李潇李潇李潇李潇李潇李潇李潇李潇潇</dd></td>
+	</tr>
+	<tr>
+		<td><dd class="banji"><i class="qun_ico"></i>72/400</dd></td>
+	</tr>
+	<tr>
+		<td id="2">
+		<button class="add_haoyou">+加入</button>
+		<button class="look_haoyou">查看</button>
+		</td>
+	</tr>
+	<tr>
+	<td colspan="2" class="quanzi_about">圈子介绍：登山泛水狄梵思黛辅导费士大夫对方身份士大夫送达方式到付</td>
+	</tr>
+</table>
+</dd>
+
+
+<!--分页区域-->
+<dd style="clear:both;"></dd>
+<ul class="page_box">
+<li>上一页</li>
+<li>1</li>
+<li class="page_now">2</li>
+<li>下一页</li>
+</ul>
+
+
+
+</div>
+</body>
+<script>
+var coundThis=0;
+var win_src=new Array();//创建打开添加好友的窗口数组对象
+var win_src_2=new Array();//创建打开查看好友的窗口数组对象
+$(document).ready(function(e) {
+	
+	//不同按钮开启同一窗口
+	/*
+	说明：父窗口有若干按钮，用于打开相同的界面，但传入的参数不同（如：QQ加好友）的解决方案。
+	功能：当父级窗口的按钮新打开一个子窗口时，在子窗口未关闭的情况下，父窗口的该按钮不能多次打开相同窗口，当用户在再次点击该按钮时，该按钮的功能是激活之前打开的窗口focus(),与此同时，父窗口的其他按钮仍旧可以点击打开其对应的窗口；
+	*/
+	$(".add_haoyou").click(function(){
+		        var this_id = $(this).parent().attr("id");
+				if($(this).hasClass("shf_check")==true)
+				{
+					win_src[this_id].focus();
+				}
+				if($(this).hasClass("shf_check")==false)
+				{
+				        win_src[this_id]= gui.Window.open('quanzi_win/加入圈子.html?res_id=11', {
+						transparent:true,
+						frame: false,
+						toolbar: false,
+						width: 460,
+						height: 360,
+						resizable:false,
+						fullscreen:false
+				});
+				
+				//子窗口回调响应
+				$(this).addClass("shf_check");
+				 win_src[this_id].on('close', function () {
+					$("#"+this_id+"").find(".add_haoyou").removeClass("shf_check");
+					 this.close(true);
+				 });
+				 }
+
+	  })
+	
+	
+	$(".look_haoyou").click(function(){
+				
+				var this_id = $(this).parent().attr("id");
+				if($(this).hasClass("shf_check_2")==true)
+				{
+					win_src_2[this_id].focus();
+				}
+				if($(this).hasClass("shf_check_2")==false)
+				{
+				        win_src_2[this_id]= gui.Window.open('quanzi_win/查看圈子.html', {
+						transparent:true,
+						frame: false,
+						toolbar: false,
+						width: 460,
+						height: 680,
+						resizable:false,
+						fullscreen:false
+				});
+				
+				//子窗口回调响应
+				$(this).addClass("shf_check_2");
+				$(this).parent().parent().prev().prev().find("td:eq(0)").find(".user_img_zhaoren").addClass("shf_check_2");
+				
+				 win_src_2[this_id].on('close', function () {
+					$("#"+this_id+"").find(".look_haoyou").removeClass("shf_check_2");
+					
+					$("#"+this_id+"").parent().prev().prev().find("td:eq(0)").find(".user_img_zhaoren").removeClass("shf_check_2");
+					
+					 this.close(true);
+					 
+				 });
+				 }
+
+		})
+		
+		
+	$(".user_img_zhaoren").click(function(){
+				
+				var this_id = $(this).parent().parent().next().next().find("td").attr("id");
+				if($(this).hasClass("shf_check_2")==true)
+				{
+					win_src_2[this_id].focus();
+				}
+				if($(this).hasClass("shf_check_2")==false)
+				{
+				        win_src_2[this_id]= gui.Window.open('quanzi_win/查看圈子.html', {
+						transparent:true,
+						frame: false,
+						toolbar: false,
+						width: 460,
+						height: 680,
+						resizable:false,
+						fullscreen:false
+				});
+				
+				//子窗口回调响应
+				$(this).addClass("shf_check_2");
+				$("#"+this_id+"").find(".look_haoyou").addClass("shf_check_2");
+				 win_src_2[this_id].on('close', function () {
+					$("#"+this_id+"").parent().prev().prev().find("td:eq(0)").find(".user_img_zhaoren").removeClass("shf_check_2");
+					$("#"+this_id+"").find(".look_haoyou").removeClass("shf_check_2");
+					 this.close(true); 
+				 });
+				 }
+
+		})
+	
+});
+</script>
+</html>

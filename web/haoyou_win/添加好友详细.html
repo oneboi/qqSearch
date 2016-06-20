@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.parent.setWindowTitle("好友姓名-添加好友","url(../img/yijian/fankui_ico.png)");
+</script>
+<style>
+.chazhao_table {
+	height: 280px;
+}
+.left_td {
+	background-color: #FFECEC;
+}
+.button_box_nav {
+	height: 40px;
+	background-color: #FFE4CA;
+	text-align: right;
+}
+.button_box_nav button {
+	width: 70px;
+	border: 1px solid #F60;
+	background-color: #FFF;
+	border-radius: 3px;
+	font-size: 12px;
+	margin-top: 5px;
+	height: 25px;
+	margin-right: 10px;
+}
+.button_box_nav button:hover {
+	background-color: #FFCA95;
+}
+.left_box {
+}
+.right_box {
+	height: 100%;
+}
+.user_img_jia {
+	width: 110px;
+	height: 110px;
+	margin-top: 40px;
+	margin-left: 10px;
+}
+.all_thisbook {
+	font-size: 12px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.all_thisbook p {
+	font-weight: bold;
+}
+.all_thisbook h2 {
+	font-size: 11px;
+	color: #666;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.right_box {
+	padding-left: 20px;
+}
+.right_box p {
+	margin-top: 30px;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+.right_box textarea {
+	resize: none;
+	width: 260px;
+	height: 55px;
+	border-radius: 3px;
+	padding: 5px;
+}
+.yanzheng {
+	
+}
+.fenzu {
+	font-size: 12px;
+	display:none;
+}
+.new_set {
+	border-radius: 5px;
+	padding: 5px;
+	margin-left: -10px;
+	width: 290px;
+	box-shadow: 0 0 5px #666666;
+	display: none;
+}
+.fenzu select {
+	width: 160px;
+}
+.add_fenzu {
+	color: #F60;
+	cursor: pointer;
+	margin-left: 5px;
+}
+.fenzu_name_text {
+	width: 206px;
+	padding: 0 5px;
+}
+.newset_button {
+	width: 60px;
+}
+.success_box
+{
+	font-size:12px;
+	margin-top:200px;
+	display:none;
+}
+.success_box img
+{
+	float:left;
+}
+.success_box h3
+{
+	margin-left:10px;
+	width:220px;
+	float:left;
+}
+.over_button
+{
+	display:none;
+}
+</style>
+</head>
+
+<body>
+<table class="chazhao_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="29%" class="left_td">
+			<dd class="left_box"> <img class="user_img_jia" src="../img/chazhao/user_img.png" /> </dd>
+			<dd class="all_thisbook">
+				<p>我是一头猪</p>
+				<h1>152635</h1>
+				<h2> 性别：男<br>
+					年龄：23岁<br>
+					学校：神木第二中心<br>
+				</h2>
+			</dd>
+		</td>
+		<td width="71%">
+			<dd class="right_box">
+				<div class="yanzheng">
+					<p>请输入验证信息：</p>
+					<textarea  placeholder="验证信息"></textarea>
+				</div>
+				<div class="fenzu">
+					<p>选择分组：
+						<select>
+							<option>我的好友</option>
+							<option>我的好友</option>
+							<option>我的好友</option>
+						</select>
+						<a class="add_fenzu">新建分组</a> </p>
+					<div class="new_set">
+						<input class="fenzu_name_text" type="text" placeholder="分组名" />
+						<button class="newset_button">创建</button>
+					</div>
+				</div>
+				<div class="success_box">
+					<img src="../img/chazhao/secuss.png" />
+					<h3>你的好友添加请求已经发送成功，正在等待对方确认。</h3>
+				</div>
+			</dd>
+		</td>
+	</tr>
+</table>
+<dd class="button_box_nav">
+	<button class="next_button">下一步</button>
+	<button class="win_close">关闭</button>
+	<button class="over_button">完成</button>
+</dd>
+</body>
+<script>
+var deCount=1;
+var beCount=1;
+$(document).ready(function(e) {
+	$(".add_fenzu").click(function(){
+		$(".new_set").toggle();
+		if(beCount==1)
+		{
+			$(this).html("取消新建");
+			beCount=2;
+		}else if(beCount==2)
+		{
+			$(this).html("新建分组");
+			beCount=1;
+		}
+		})
+	$(".newset_button").click(function(){
+		$(".new_set").fadeOut(0);
+		var newsName=$(".fenzu_name_text").val();
+		$(".fenzu select").append("<option>"+newsName+"</option>");
+		$(".add_fenzu").html("新建分组");
+		beCount=1;
+		})
+	
+});
+
+
+  $(".next_button").click(function(){
+	  
+	  if(deCount==1)
+	  {
+		  $(".fenzu").fadeIn(0);
+		  $(".yanzheng").fadeOut(0);
+		  $(".success_box").fadeOut(0);
+		  deCount=2;
+	  }else if(deCount==2)
+	  {
+		  $(".success_box").fadeIn(0);
+		  $(".yanzheng").fadeOut(0);
+		  $(".fenzu").fadeOut(0);
+		   $(".next_button").fadeOut(0);
+		  $(".win_close").fadeOut(0);
+		   $(".over_button").fadeIn(0);
+	  }
+	  })
+	  
+	$(".win_close").click(function(){
+		win.close();
+		})
+	
+	
+	$(".over_button").click(function(){
+		win.close();
+		})
+</script>
+</html>

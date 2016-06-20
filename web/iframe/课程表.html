@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../css/public_if.css"/>
+<link rel="stylesheet" type="text/css" href="../css/dis_all_clear.css"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script>
+window.parent.setWindowTitle("课程表","url(img/kebiao/kebiao_ico.png)");
+</script>
+<style>
+.top_search {
+	background-color: #fcf4f1;
+	padding: 20px 0;
+	border-bottom:1px solid #CCC;
+}
+.top_search table {
+	width: 88%;
+	margin: 0px auto;
+}
+.top_search .suiji_table {
+	width: 100%;
+}
+.dl_table {
+	padding: 12px 0px;
+	background-image: url(img/kebiao/suiji_bg.png);
+	background-repeat: no-repeat;
+	width: 100%;
+	padding-left: 30px;
+}
+.suiji_table {
+}
+.suiji_table tr td {
+	font-size: 12px;
+}
+.suiji_table tr .suiji_title {
+	line-height: 17px;
+	color: #f36728;
+}
+.bi_ico {
+	background-image: url(img/kebiao/bi_ico.png);
+	width: 14px;
+	height: 14px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-right: 5px;
+	position: relative;
+	top: 1px;
+	opacity:0.5;
+}
+.delect_ico {
+	background-image: url(img/kebiao/delect_ico.png);
+	width: 14px;
+	height: 14px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-right: 5px;
+	position: relative;
+	top: 3px;
+	left: 4px;
+	display: none;
+}
+.biji:hover .delect_ico {
+	display: inline-block;
+}
+.biji:hover .bi_ico {
+	opacity:1;
+}
+.f_td {
+	padding-left: 20px;
+}
+.bottom_box
+{
+	height:432px;
+	 overflow:auto;
+}
+.bottom_box table
+{
+	width:95%;
+	margin:20px auto;
+}
+.bottom_box table tr td
+{
+	border:1px solid #fdba9a;
+	text-align:center;
+	height:60px;
+	font-size:12px;
+	color:#666;
+}
+.bottom_box table tr th
+{
+	border:1px solid #fdba9a;
+	text-align:center;
+	height:40px;
+	color:#d64200;
+	font-weight:100;
+	font-size:16px;
+}
+.biantiao
+{
+	color:#454545;
+}
+.bottom_box table tr .hanghao
+{
+	color:#d64200;
+	font-size:16px;
+}
+.biantiao2
+{
+	display:block;
+	width:100%;
+	height:100%;
+	text-align:center;
+	line-height:30px;
+}
+.biantiao2:hover
+{
+	background-color:#FFE6E6;
+}
+.biantiao
+{
+	display:inline-block;
+	min-width:220px;
+	min-height:14px;
+	white-space:normal;
+	word-break:break-all;
+}
+.do_class_text_2
+{
+	width:100%;
+	resize:none;
+	border:0px;
+	height:100%;
+	background-color:#FFE1E1;
+	min-width:100%;
+	min-height:60px;
+	line-height:30px;
+	text-align:center;
+}
+.do_class_text
+{
+	width:220px;
+	border:0px;
+	height:100%;
+	background-color:#FFE1E1;
+}
+</style>
+</head>
+
+<body>
+<div class="top_search">
+	<table width="120%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="21%"><img src="img/kebiao/logo.png" /></td>
+			<td width="79%">
+				<dd class="dl_table">
+					<table  class="suiji_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="2%" rowspan="3" class="suiji_title">我的随记</td>
+							<td width="48%" class="f_td biji"><i class="bi_ico" title="编辑"></i><span  title="双击编辑" class="biantiao">下午有节美术课不能不能忘记忘现在吃</span><i class="delect_ico" title="清空"></i></td>
+							<td width="50%" class="biji"><i class="bi_ico" title="编辑"></i><span  title="双击编辑"  class="biantiao">下午有节美术课，不能不能忘记忘记，次</span><i class="delect_ico" title="清空"></i></td>
+						</tr>
+						<tr>
+							<td class="f_td biji"><i class="bi_ico" title="编辑"></i><span  title="双击编辑"  class="biantiao">下午有节美术课，不能忘记，不能忘记次</span><i class="delect_ico" title="清空"></i></td>
+							<td class="biji"><i class="bi_ico" title="编辑"></i><span  title="双击编辑"  class="biantiao">下午有节美术课，不能忘不能忘记记，次</span><i class="delect_ico" title="清空"></i></td>
+						</tr>
+						<tr>
+							<td class="f_td biji"><i class="bi_ico" title="编辑"></i><span  title="双击编辑"  class="biantiao">下午有节美术不能忘记课，不能忘记，次</span><i class="delect_ico" title="清空"></i></td>
+							<td class="biji"><i class="bi_ico" title="编辑"></i><span  title="双击编辑"  class="biantiao">下午有节美术课，不能忘记不能忘记，次</span><i class="delect_ico" title="清空"></i></td>
+						</tr>
+					</table>
+				</dd>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="bottom_box">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<th width="5%">行号</th>
+		<th width="13.42%">星期一</th>
+		<th width="13.42%">星期二</th>
+		<th width="13.42%">星期四</th>
+		<th width="13.42%">星期四</th>
+		<th width="13.42%">星期五</th>
+		<th width="13.42%">星期六</th>
+		<th width="13.42%">星期日</th>
+	</tr>
+	<tr>
+		<td class="hanghao">1</td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+	</tr>
+	<tr>
+		<td class="hanghao">2</td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+	</tr>
+	<tr>
+		<td class="hanghao">3</td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+	</tr>
+	<tr>
+		<td class="hanghao">4</td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+	</tr>
+	<tr>
+		<td class="hanghao">5</td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+	</tr>
+	<tr>
+		<td class="hanghao">6</td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+	</tr>
+	<tr>
+		<td class="hanghao">7</td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+	</tr>
+	<tr>
+		<td class="hanghao">8</td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+	</tr>
+	<tr>
+		<td class="hanghao">9</td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+	</tr>
+	<tr>
+		<td class="hanghao">10</td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+		<td><span  title="双击编辑"  class="biantiao2"></span></td>
+	</tr>
+</table>
+
+</div>
+</body>
+<script>
+var countBlur=0;
+$(document).ready(function(e) {
+	
+
+/*点击删除按钮*/
+$(".delect_ico").live("click",function(){
+	$(this).parent().find(".biantiao").html("(空)");//内容制空
+	$(this).parent().find(".delect_ico").remove();//删除按钮移除
+	})
+	
+
+/*点击编辑按钮*/
+$(".bi_ico").live("click",function(){
+	
+	if(countBlur==0)
+	{
+	var tdValue=$(this).parent().find(".biantiao").html();
+	if(tdValue=="(空)")
+	{
+		tdValue="";
+		$(this).parent().find(".delect_ico").remove();
+	}else if(tdValue!="(空)")
+	{
+		
+		if(has_this=$(this).parent().find(".delect_ico").html()==undefined)
+		{
+			has_this=$(this).parent().append("<i class='delect_ico' title='清空'></i>");
+		}
+		
+	}
+	$(this).parent().find(".biantiao").html("<input maxlength='18' class='do_class_text' type='text' value='"+tdValue+"' />");
+	$(".do_class_text").focus();
+	
+	countBlur=1;
+	}else
+	{
+		return;
+	}
+	})	
+	
+
+/*双击编辑*/
+$(".biantiao").live("dblclick",function(){
+	if(countBlur==0)
+	{
+	var tdValue=$(this).html();
+	if(tdValue=="(空)")
+	{
+		tdValue="";
+		$(this).parent().find(".delect_ico").remove();
+	}else if(tdValue!="(空)")
+	{
+		
+		if(has_this=$(this).parent().find(".delect_ico").html()==undefined)
+		{
+			has_this=$(this).parent().append("<i class='delect_ico' title='清空'></i>");
+		}
+		
+	}
+	$(this).html("<input maxlength='18' class='do_class_text' type='text' value='"+tdValue+"' />");
+	$(".do_class_text").focus();
+	
+	countBlur=1;
+	}else
+	{
+		return;
+	}
+	
+})
+
+/*顶部便签input失去焦点触发*/
+$(".do_class_text").live("blur",function(){
+	var tdDovalue=$(this).val();
+	var tdClass=$(this).parent();
+	if(tdDovalue==""||tdDovalue==null)
+	{
+		
+		var dd=$(this).parent().parent().find(".delect_ico").remove();
+		tdDovalue="(空)";
+		
+	}else if(tdDovalue!="(空)")
+	{
+		
+		if(has_this=$(this).parent().parent().find(".delect_ico").html()==undefined)
+		{
+			has_this=$(this).parent().parent().append("<i class='delect_ico' title='清空'></i>");
+		}
+		
+	}
+	$(tdClass).html(tdDovalue);
+	countBlur=0;
+	
+	})
+	
+
+/*课表双击编辑*/
+$(".biantiao2").live("dblclick",function(){
+	if(countBlur==0)
+	{
+	var tdValue=$(this).html();
+	$(this).html("<textarea class='do_class_text_2'  maxlength='18'>"+tdValue+"</textarea>");
+	$(".do_class_text_2").focus();
+	countBlur=1;
+	}else
+	{
+		return;
+	}
+	
+})
+
+/*课表失去焦点判断*/
+$(".do_class_text_2").live("blur",function(){
+	var tdDovalue=$(this).val();
+	var tdClass=$(this).parent();
+	$(tdClass).html(tdDovalue);
+	countBlur=0;
+	})
+
+
+
+
+});
+</script>
+</html>

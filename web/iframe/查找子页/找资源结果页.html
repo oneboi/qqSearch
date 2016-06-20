@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript" src="../../js/jquery-1.8.0.min.js"></script>
+<title>无标题文档</title>
+<style type="text/css">
+.bottom_box
+{
+	height:312px;
+	overflow:auto;
+}
+.bottom_box table td
+{
+	text-align:center;
+	color:#6c6c6c;
+	line-height:50px;
+	font-size:12px;
+}
+.table_title table th
+{
+	color:#e06832;
+	font-weight:100;
+	font-size:16px;
+	line-height:40px;
+}
+.bottom_box table th
+{
+	color:#e06832;
+	font-weight:100;
+	font-size:16px;
+	line-height:40px;
+}
+.bottom_box table .f_td
+{
+	padding-left:40px;
+	
+}
+.bottom_box table .f_td_2
+{
+	padding-left:30px;
+	text-align:left;
+	color:#e28b25;
+	font-size:14px;
+}
+.bottom_box table .l_td
+{
+	padding-right:20px;
+}
+.th_tr
+{
+	border-bottom:1px solid #edd9d0;
+}
+.tr_hover
+{
+	border-left:3px solid #Fff;
+	-webkit-transition: 0.5s;
+}
+.tr_hover:hover
+{
+	border-left:3px solid #F30;
+	background-color:#FFE8E8;
+	-webkit-transition: 0.5s;
+}
+.word_li
+{
+background-image:url(img/chazhao/word_ico.png);
+background-repeat: no-repeat;
+text-indent: 27px;
+background-position: 5px 16px;
+text-overflow:ellipsis;
+white-space:nowrap;
+overflow:hidden;
+width:300px;
+}
+a
+{
+	cursor:pointer;
+	display:block;
+}
+
+
+/*下载样式*/
+.circle {
+    width: 30px;
+    height: 30px;  
+    position:relative;
+    border-radius: 50%;
+    background:#F60;
+	margin-left:5px;
+}
+.pie_left, .pie_right {
+    width: 30px; 
+    height: 30px;
+    position: absolute;
+    top: 0;left: 0;
+}
+.left, .right {
+    display: block;
+    width:30px; 
+    height:30px;
+    background:#CCC;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+}
+.pie_right, .right {
+    clip:rect(0,auto,auto,15px);
+}
+.pie_left, .left {
+    clip:rect(0,15px,auto,0);
+}
+.mask {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: 5px;
+    top: 5px;
+    background: #FFF;
+    position: absolute;
+    text-align: center;
+    line-height: 20px;
+    font-size: 10px;
+}
+
+/*底部*/
+.footer
+{
+	height:60px;
+	background-color:#fff;
+	position:fixed;
+	border-bottom:0px;
+	width:900px;
+	box-shadow:0 0 5px #666666;
+	font-size:12px;
+	line-height:20px;
+}
+.xuanzhuan
+{
+	height:60px;
+	width:60px;
+	background-image:url(img/xiazai/xuanzhuan.png);
+	background-repeat:no-repeat;
+	
+}
+.zhuandong
+{
+	-webkit-animation: dh_nav4 0.5s infinite linear ;
+}
+ @-webkit-keyframes dh_nav4 {
+0% {
+-webkit-transform:rotateX(0deg)rotateY(0deg)rotateZ(0deg);
+}
+50%
+{
+-webkit-transform:rotateX(0deg)rotateY(0deg)rotateZ(180deg);
+}
+100% {
+-webkit-transform:rotateX(0deg)rotateY(0deg)rotateZ(360deg);
+}
+}
+.xiazai
+{
+	height:60px;
+	width:60px;
+	position:absolute;
+	margin-top:-60px;
+	background-image:url(img/xiazai/xiazai.png);
+}
+.f_l
+{
+	float:left;
+	width:790px;
+	padding:10px;
+}
+.f_r
+{
+	float:left;
+	width:60px;
+	margin-left:30px;
+}
+.year
+{
+	color:#F30;
+	font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="table_title">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr class="th_tr">
+		<th width="37%" class="f_td">资源名</th>
+		<th width="10%">类型</th>
+		<th width="11%">所需积分</th>
+		<th width="9%">下载量</th>
+		<th width="12%">上传时间</th>
+		<th width="14%">上传人</th>
+		<th width="7%" class="l_td" style="padding-right:15px;">操作</th>
+	</tr>
+</table>
+</div>
+<div class="bottom_box">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr class="tr_hover">
+		<td width="37%" class="f_td_2">
+		<dd class="word_li">张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮</dd>
+		</td>
+		<td width="10%">文本</td>
+		<td width="11%">5</td>
+		<td width="9%">22次</td>
+		<td width="12%">2013-12-08</td>
+		<td width="14%">上官瑞士卷</td>
+		<td width="7%" class="l_td" id="0">
+		<a class="xiazai_button">下载</a></td>
+	</tr>
+	<tr class="tr_hover">
+		<td width="37%" class="f_td_2">
+		<dd class="word_li">张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮</dd>
+		</td>
+		<td width="10%">文本</td>
+		<td width="11%">5</td>
+		<td width="9%">22次</td>
+		<td width="12%">2013-12-08</td>
+		<td width="14%">上官瑞士卷</td>
+		<td width="7%" class="l_td" id="1"><a class="xiazai_button">下载</a></td>
+	</tr>
+	<tr class="tr_hover">
+		<td width="37%" class="f_td_2">
+		<dd class="word_li">张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮</dd>
+		</td>
+		<td width="10%">文本</td>
+		<td width="11%">5</td>
+		<td width="9%">22次</td>
+		<td width="12%">2013-12-08</td>
+		<td width="14%">上官瑞士卷</td>
+		<td width="7%" class="l_td" id="2"><a class="xiazai_button">下载</a></td>
+	</tr>
+	<tr class="tr_hover">
+		<td width="37%" class="f_td_2">
+		<dd class="word_li">张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮</dd>
+		</td>
+		<td width="10%">文本</td>
+		<td width="11%">5</td>
+		<td width="9%">22次</td>
+		<td width="12%">2013-12-08</td>
+		<td width="14%">上官瑞士卷</td>
+		<td width="7%" class="l_td" id="3"><a class="xiazai_button">下载</a></td>
+	</tr>
+	<tr class="tr_hover">
+		<td width="37%" class="f_td_2">
+		<dd class="word_li">张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮张珈玮</dd>
+		</td>
+		<td width="10%">文本</td>
+		<td width="11%">5</td>
+		<td width="9%">22次</td>
+		<td width="12%">2013-12-08</td>
+		<td width="14%">上官瑞士卷</td>
+		<td width="7%" class="l_td" id="4"><a class="xiazai_button">下载</a></td>
+	</tr>
+	
+	
+</table>
+</div>
+<div class="footer">
+<div class="f_r">
+		<div class="xuanzhuan">
+		</div>
+		<div class="xiazai">
+		</div>
+</div>
+		<div class="f_l">
+		<span>当前队列有<label class="year xzCount">0</label>个文件正在下载，下载速度：<label class="year xzSudu">0</label>K/s </span><br />
+		<span>下载状态：<label class="year xzZhuangtai">无任务</label></span></td>
+		</div>
+</table>
+</div>
+</body>
+<script>
+var xzCount=0;//正在下载文件个数
+var xzSudu=0;//下载速度
+var xzZhuangtai="无任务";//下载状态
+
+$(document).ready(function(e) {
+	
+     xzZhuangtai="无任务";
+	du();
+	
+	$(".xiazai_button").click( function(){
+		
+		var xz_id = $(this).parent().attr("id");
+		thisdd(xz_id,0);
+		$(".xuanzhuan").addClass("zhuandong");
+		xzCount++;
+		xzZhuangtai="正在下载";
+		doDown();
+		
+		})
+		
+	
+		
+});
+
+function du() {
+    $('.circle').each(function(index, el) {
+        var num = $(this).find('span').text() * 3.6;
+        if (num<=180) {
+            $(this).find('.right').css('transform', "rotate(" + num + "deg)");
+        } else {
+            $(this).find('.right').css('transform', "rotate(180deg)");
+            $(this).find('.left').css('transform', "rotate(" + (num - 180) + "deg)");
+        };
+    });
+
+}
+
+function doDown()
+{
+	$(".xzCount").html(xzCount);
+	$(".xzSudu").html(xzSudu);
+	$(".xzZhuangtai").html(xzZhuangtai);
+	
+	
+}
+function thisdd(xz_id,feleHow)
+{
+	var thisHtml="<div class='circle'><div class='pie_left'><div class='left'></div></div><div class='pie_right'><div class='right'></div></div><div class='mask'><span>"+feleHow+"</span>%</div></div>";
+	$("#"+xz_id+"").html(thisHtml);
+  var setTimethis=setInterval(function(){
+	feleHow=feleHow+30;
+	xzSudu=xzSudu+10;
+	if(feleHow>99)
+	{
+		$("#"+xz_id+"").html("<a class='dakai_button'>打开</a>");
+		xzCount--;
+		if(xzCount<1)
+		{
+			xzCount=0;
+			xzZhuangtai="无任务";
+			$(".xuanzhuan").removeClass("zhuandong");
+			clearInterval(setTimethis);
+		}
+		doDown();
+		return;
+	}
+	doDown();
+	$("#"+xz_id+"").find("span").html(feleHow);
+	du()
+	},1000)
+}
+</script>
+</html>

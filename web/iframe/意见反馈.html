@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../css/public_if.css"/>
+<link rel="stylesheet" type="text/css" href="../css/dis_all_clear.css"/>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script>
+window.parent.setWindowTitle("意见反馈","url(img/yijian/fankui_ico.png)");
+</script>
+<style>
+.body_all
+{
+	padding:20px;
+	font-size:12px;
+	color:#4a4a4a;
+	
+}
+.Required
+{
+	color:#F00;
+}
+.submit_taxt
+{
+	width:97%;
+	height:70px;
+	resize:none;
+	padding:5px;
+	border:1px solid #dfdfdf;
+	box-shadow:0px 0px  1px  #c3c3c3;
+	background-color:#eeeeee;
+}
+.input_text
+{
+	width:172px;
+	height:20px;
+	padding:0 5px;
+	line-height:20px;
+	border:1px solid #dfdfdf;
+	box-shadow:0px 0px  1px  #c3c3c3;
+	background-color:#eeeeee;
+}
+table tr td
+{
+	line-height:30px;
+	max-width:150px;
+
+ 
+}
+.qipao{
+	border:1px solid #e2b48d;
+	background-color:#ffe4cd;
+	border-radius:10px 10px 10px 0px;
+	padding:10px;
+	width:80%
+}
+label
+{
+	padding:0 2px;
+}
+.text_r
+{
+	text-align:right;
+	padding-right:10px;
+}
+table tr .lin_height_min
+{
+	line-height:18px;
+}
+</style>
+</head>
+
+<body>
+<div class="body_all">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="3" class="lin_height_min">您好!<br>欢迎您将您意见或使用中遇到的问题提交给我们，我们将会仔细阅读您的反馈。</td>
+	</tr>
+	<tr>
+		<td height="36" colspan="3"><span class="Required">*</span>反馈内容:(限制5-200字)</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+		<textarea  placeholder="此处键入文本"  class="submit_taxt"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+		其他信息（非必填，方便我们更加快速联系您）
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" class="text_r">姓名</td><td width="34%"><input placeholder="填入姓名" type="text" class="input_text" /></td>
+		<td width="58%" rowspan="5">
+		<dd class="qipao">
+		请根据提示完成相关键入操作！
+		</dd>
+		</td>
+	</tr>
+	<tr>
+		<td class="text_r">身份</td><td>
+		<label><input name="Fruit" type="radio" value="" />老师 </label>
+		<label><input name="Fruit" type="radio" value="" />学生 </label>
+		<label><input name="Fruit" type="radio" value="" />家长 </label>
+		<label><input name="Fruit" type="radio" value="" />其他 </label>
+		</td>
+	</tr>
+	<tr>
+		<td class="text_r">邮箱</td><td><input id="email" placeholder="填入常用邮箱" type="text"  class="input_text" /></td>
+	</tr>
+	<tr>
+		<td class="text_r">手机</td><td><input id="mobile" placeholder="填入手机号码"  type="text" class="input_text" /></td>
+	</tr>
+	<tr>
+	<tr>
+		<td class="text_r">QQ</td><td><input id="qq" placeholder="填入常用QQ"  type="text" class="input_text" /></td>
+	</tr>
+	<tr>
+		<td class="text_r">验证码</td><td colspan="3">此处嵌入验证码插件
+		</td>
+	</tr>
+</table>
+<div>
+<input type="button" />
+<input type="button"
+</div>
+</div>
+</body>
+<script>
+
+$(document).ready(function(e) {
+var eMail=document.getElementById("email").value;
+var mobile=document.getElementById("mobile").value;
+var qq=document.getElementById("qq").value;
+	$("#email").blur(function(){
+		eMail=document.getElementById("email").value;
+		isEmail(eMail);
+		})
+	$("#mobile").blur(function(){
+
+        mobile=document.getElementById("mobile").value;
+
+		checkMobile(mobile);
+		})
+	$("#qq").blur(function(){
+
+		qq=document.getElementById("qq").value;
+		isQQ(qq);
+		})
+});
+/* 
+用途：检查输入对象的值是否符合E-Mail格式 
+输入：str 输入的字符串 
+返回：如果通过验证返回true,否则返回false 
+
+*/ 
+function isEmail( str ){  
+var myReg = /^[-_A-Za-z0-9]+@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/; 
+if(myReg.test(str)) 
+{
+$(".qipao").html("电子邮箱格式正确！");
+	
+}else
+{
+	$(".qipao").html("电子邮箱格式错误！");}
+} 
+
+/* 
+用途：检查输入字符串是否符合正整数格式 
+输入： 
+s：字符串 
+返回： 
+如果通过验证返回true,否则返回false 
+
+*/ 
+function isQQ(str){
+if (str != ""||str !=null){ 
+ var pattern=/^\d+(\.\d+)?$/;
+ var flag = pattern.test(str);
+ if(!flag){
+ 
+	$(".qipao").html("QQ号码格式错误！");
+ }else{
+$(".qipao").html("QQ号码格式正确！");
+ }
+}
+}
+
+/* 
+用途：检查输入手机号码是否正确 
+输入： 
+s：字符串 
+返回： 
+如果通过验证返回true,否则返回false 
+
+*/ 
+function checkMobile( s ){   
+var regu =/^[1][0-9]{10}$/; 
+var re = new RegExp(regu); 
+if (re.test(s)) { 
+$(".qipao").html("手机号码格式正确！");
+}else{ 
+
+	$(".qipao").html("手机号码格式错误！"); 
+} 
+} 
+</script>
+</html>
