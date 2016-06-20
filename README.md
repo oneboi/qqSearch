@@ -1,11 +1,21 @@
 # qqSearch
+##文件下载页面
 ![image](https://github.com/renjianfeng/qqSearch/raw/master/sdf1.jpg)
+##查找群组页面
 ![image](https://github.com/renjianfeng/qqSearch/raw/master/sdf2.jpg)
+##查找好友页面
 ![image](https://github.com/renjianfeng/qqSearch/raw/master/sdf3.jpg)
+##添加好友
 ![image](https://github.com/renjianfeng/qqSearch/raw/master/sdf4.jpg)
+##查看好友
 ![image](https://github.com/renjianfeng/qqSearch/raw/master/sdf5.jpg)
+##出错页面
 ![image](https://github.com/renjianfeng/qqSearch/raw/master/sdf6.jpg)
+##通讯录
 ![image](https://github.com/renjianfeng/qqSearch/raw/master/sdf7.jpg)
+##课程表
 ![image](https://github.com/renjianfeng/qqSearch/raw/master/sdf8.jpg)
+##网盘
 ![image](https://github.com/renjianfeng/qqSearch/raw/master/sdf9.jpg)
+##意见反馈
 ![image](https://github.com/renjianfeng/qqSearch/raw/master/sdf10.jpg)
